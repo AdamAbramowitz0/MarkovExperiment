@@ -24,9 +24,9 @@ int main(int argc, char *argv[]){
                 }
                 if(sum != 0){
                         (*arr)[i][0] = (*arr)[i][0]/sum;
-                        for(int j = 1; j < 256; j++){
-                                (*arr)[i][j] = (*arr)[i][j]/sum + (*arr)[i][j-1];
-                        }
+                        // for(int j = 1; j < 256; j++){
+                        //         (*arr)[i][j] = (*arr)[i][j]/sum + (*arr)[i][j-1];
+                        // }
                 }
         }
         // fprintf(stderr,"HERE");
@@ -39,18 +39,27 @@ int main(int argc, char *argv[]){
         char start;
 
         scanf("%c",&start);
-        
+        char curr; 
+        double peak;
         for(int i = 0; i < 100; i++){
+                peak = 0;
                 for(int j = 0; j < 256; j++){
-                        if((*arr)[start][j] >= 1.0/((time(NULL) %7)+1)){
-                                printf("%c",j);
-                                start = j;
-                                break;
+
+                        if((*arr)[start][j] >= peak){
+                                peak = (*arr)[start][j];
+                                curr = j;
                         }
-
                 }
-
+                printf("%c",curr);
+                start = curr;
         }
 
 
-}
+}  
+
+
+// if((*arr)[start][j] >= 1.0/((time(NULL) %7)+1)){
+                        //         printf("%c",j);
+                        //         start = j;
+                        //         break;
+                        // }
