@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 
 void RandomWalk::train(std::string filename) {
     graph.resize(256);
-    for (int i = 0; i < graph.size(); ++i) {
+    for (int i = 0; i < graph.size(); ++i) { 
         graph[i].resize(256);
         std::fill(graph[i].begin(), graph[i].end(), 0);
     }

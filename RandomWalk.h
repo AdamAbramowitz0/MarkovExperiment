@@ -9,7 +9,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-class RandomWalk {
+class RandomWalk { 
 public:
     void train(std::string filename);
     void generate(unsigned char input);
